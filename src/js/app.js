@@ -1,10 +1,25 @@
-//Toggle menu
+//Toggle menu and main page scrolling
 
 const menu = document.querySelector('.sidebar__menu-toggle');
 const sidebar = document.querySelector('.sidebar');
 menu.addEventListener('click', () => {
     menu.classList.toggle('opened');
     sidebar.classList.toggle('opened');
+    if(sidebar.classList.contains('opened')){
+        if (sidebar.scrollHeight > sidebar.clientHeight || window.innerWidth <= 640) {
+            document.body.style.cssText = `overflow: hidden`;
+        }
+    }
+    else{
+        document.body.style.cssText = `overflow: auto`;
+    }
+});
+window.addEventListener('resize', function () {
+    if ((window.innerWidth <= 640 && sidebar.classList.contains('opened')) || (sidebar.classList.contains('opened') && sidebar.scrollHeight > sidebar.clientHeight)) {
+        document.body.style.overflowY = 'hidden';
+    } else {
+        document.body.style.overflowY = 'auto';
+    }
 });
 
 
@@ -21,8 +36,6 @@ menu.addEventListener('click', () => {
     });
 
 
-
-
 //Hide partial row
 
 function hideRow (cardsInRow) {
@@ -30,7 +43,6 @@ function hideRow (cardsInRow) {
     const cards = Array.from(cardsList.children);
 
     const remainingCards = cards.length % cardsInRow;
-    console.log(remainingCards)
 
     cards.forEach((c) => {
         c.classList.remove('hide');
