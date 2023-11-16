@@ -1,0 +1,96 @@
+.header{
+
+ &__content{
+   position: relative;
+   display: flex;
+   justify-content: flex-end;
+   padding: 30px;
+ }
+  &__actions{
+    display: flex;
+    gap: 10px;
+    &-triangular{
+      border-top:15px solid transparent;
+      border-left: 30px solid $bigscr-element;
+      border-bottom: 15px solid transparent;
+      border-radius: 3px;
+      transition: all $duration ease-in-out;
+    }
+    &-circle{
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: $bigscr-element;
+      transition: all $duration ease-in-out;
+    }
+    &-square{
+      width: 30px;
+      height: 30px;
+      border-radius: 3px;
+      background-color: $bigscr-element;
+      transition: all $duration ease-in-out;
+    }
+    &-square:hover, &-circle:hover{
+     background-color: darken($bigscr-element, 8%);
+    }
+    &-square:active, &-circle:active, &-triangular:active {
+      transform: translateY(2px);
+    }
+    &-triangular:hover {
+      border-left: 30px solid darken($bigscr-element, 8%);
+    }
+  }
+}
+
+@include mediaTablet{
+  .header{
+    background-color: $tablet-accent;
+    position: fixed;
+    left: 0;
+    right: 0;
+    &__content{
+      padding: 20px;
+    }
+    &__actions{
+      &-triangular{
+        border-left-color: darken($tablet-element, 20%);
+      }
+      &-circle{
+        background-color: darken($tablet-element, 20%);
+      }
+      &-square{
+        background-color: darken($tablet-element, 20%);
+      }
+      &-square:hover, &-circle:hover{
+        background-color: darken($tablet-element, 30%);
+      }
+      &-triangular:hover {
+        border-left-color: darken($tablet-element, 30%);
+      }
+  }
+ }
+}
+
+
+@include mediaMobile {
+  .header{
+    background-color: $mobile-accent;
+    &__actions{
+      &-triangular{
+        border-left-color: darken($mobile-element, 20%);
+      }
+      &-circle{
+        background-color: darken($mobile-element, 20%);
+      }
+      &-square{
+        background-color: darken($mobile-element, 20%);
+      }
+      &-square:hover, &-circle:hover{
+        background-color: darken($mobile-element, 30%);
+      }
+      &-triangular:hover {
+        border-left-color: darken($mobile-element, 30%);
+      }
+    }
+  }
+}

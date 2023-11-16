@@ -1,0 +1,16 @@
+.footer{
+  border-top: 3px solid $bigscr-element;
+  padding: 20px 30px;
+}
+
+@include mediaTablet{
+  .footer{
+    border-top-color: $tablet-element;
+  }
+}
+
+@include mediaMobile{
+  .footer{
+    border-top-color: $mobile-element;
+  }
+}

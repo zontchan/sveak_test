@@ -1,0 +1,2 @@
+!function(){var n={335:function(){console.log("skkkd world"),console.log(5)}},o={};function r(t){var e=o[t];if(void 0!==e)return e.exports;var u=o[t]={exports:{}};return n[t](u,u.exports,r),u.exports}r.n=function(n){var o=n&&n.__esModule?function(){return n.default}:function(){return n};return r.d(o,{a:o}),o},r.d=function(n,o){for(var t in o)r.o(o,t)&&!r.o(n,t)&&Object.defineProperty(n,t,{enumerable:!0,get:o[t]})},r.o=function(n,o){return Object.prototype.hasOwnProperty.call(n,o)},function(){"use strict";r(335)}()}();
+//# sourceMappingURL=main.01e95b1b1c3b986c5a99.js.map

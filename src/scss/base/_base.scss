@@ -1,0 +1,39 @@
+body{
+  color: $main-font;
+}
+.wrapper{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $bigscr-main;
+}
+.main-content{
+  position: relative;
+  flex: 1;
+}
+.top-row-content{
+  flex: 1 0 auto;
+  display: flex;
+}
+.footer{
+  flex: 0 0 auto;
+}
+a{
+  color: $main-font;
+}
+
+@include mediaTablet {
+  .wrapper{
+    background-color: $tablet-main;
+  }
+}
+@include mediaMobile {
+  .wrapper{
+    background-color: $mobile-main;
+  }
+}
+
+.hide{
+  display: none;
+}
